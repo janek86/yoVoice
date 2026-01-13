@@ -1,0 +1,176 @@
+Changes tracking file for ESP32 -  "Evo Internet Radio" - v3
+
+3.19.53
+- corrected isseuw with logo loading when using SPIFFS
+- corrected proper back from settings (OLED refresh)
+- corrected save station and bank when only bank was changed
+- fetchStation function now with redirection option
+
+
+3.19.52
+- add option "Play form URL" in main menu
+- add own LOGO at start-up loaded from SD (if exist) - file logo.xbm (256x64)
+- recovery mode update, WIFI manager mode
+	- auto reset after connection add
+	- info "CONNECTED" after proper connection and display assgined by router IP
+- Save Always flag add to prevent saving on every change Station No, Bank No., Volume value speciali if we usign SPIFFS
+- Extra audio buffer view in VU mode 4
+- correction of VU max value to avoid clipping in mode0
+- Info about used library revision is now placed inside source code
+- [pssibility to use JOY signals for SD Active, SW Power, 
+
+
+3.19.48
+- correct switch off when PowerClock flag is set to 0
+- corrected WS inside html control
+- Welcome message now shows SD/SPIFSS and TwoEncoders flags settings
+
+
+3.19.47
+
+- Storage: Now you can select inside code if you are using SD Card or SPIFFS memory by single line change
+- 2nd Encoder add as an option
+- Single click powerOff / powerOn by remote control and by click on encoders
+- Replace on Config web all Select items by CheckBoxes
+- DisplayRadio: Change evt audio refrash action, no scroller function in mode 1 (big clock), just static name of selected station
+- Radio TitleName: BOM UTF signs removed (ex. visable on on RadioZET)
+- WWW page: Mute indicator add
+- BUGs dedected: 
+	- Change volume on web page during MUTE was not switching off mute flag
+	- Corrected NTP->RTC sync. after power lose
+
+
+3.19.33
+- Corrected reaction on digits keys when playing from URL
+- Configuration File: Updated to include reaction after power fail
+- Radiobroswer: update web page to autodedect IP/Hostname
+- Udpate Info Web Page with documentation links
+- New Start Logo with "Evo"
+
+
+3.19.32
+- Power Modes: Full reset functionality added after wake-up; ON/OFF function can be controlled via remote control or encoder switch
+- Power Status Control: Reset source dedection add, if there was blackout radio will go to sleep mode
+- Sleep Mode: Added with selectable timers of 15, 30, 45, 75, and 90 minutes
+- No Network Mode: Added IR control in no network mode, Power OFF and Restart possible
+- Configuration File: Updated to include on/off option for the clock in sleep mode on or off
+- Full-Screen Clock: Now displayed during sleep mode
+- Radio Browser API Integration: Search and play radio stations directly from RadioBrowser servers
+- Station Navigation: Using the arrow keys now works in loop mode; reaching the last station (e.g., 99) moves to station 1 automatically
+
+	
+3.19.19
+- corrected bitrate dispaly with estiamted bitrate
+- in station list menu left and right arrows now increase station count by 5 (speed move on list)
+- add remote POWER OFF/ON option puting ESP32 in light sleep mode. Function under rcCmdRed button on remote
+
+
+3.19.11
+- this is copy of version 3.18.21 with support for new audio i2s (3.4.2 and higher) library and ESP32 core (3.2.0)
+- support new stream info read
+- new function to feed stream data on OLED display
+- preparation for increase banks numbers
+- code clean
+
+--------------------------------
+
+3.18.21
+- THIS IS LAST VERSION WORKING ON OLD AUDIO LIBRARY AND ESP32 CORE 
+
+Arduino IDE 2.3.4
+
+Lib list:
+ESP32 3.0.7
+AsyncTCP 3.3.6
+ESP Asunc WebServer 3.7.2
+ESP-audioI2S-master 3.0.13 + recompiled wip, netif
+U8g2 2.36.5
+WiFiManager 2.0.17
+ezButton 1.0.4
+
+changes:
+- corrected station list open from remote controler
+- station list starting from current playing station
+- new OLED mode 3 screen  with centered content and mini VU meters
+- new OLED mode 4 with full screen VU meters
+
+
+3.18.12
+- smooth mode of VU meter
+- new layout of mode 0
+- new layout of station list
+- new font for radio station name
+- corrected recovery mode response
+- web configuration, default values added
+- option for read station name direcly from stream -  experimental!
+
+
+3.18.06
+- New VUmeter with 1px increase, L,R letters
+- Peak & Hold VUmeter function added
+
+3.18.05
+- correction of 1250 to UTF8 function
+
+3.18.04
+- correction of 1250 to UTF8 add for station string
+- code clean from unused functions
+- remove ScrollerFormater function from displayRadio function
+- separate ScrollerFormater fucntion add to avoid flickering on station with autoDJ and counter in station string
+
+
+3.17.99
+- bits per sample info add to webpage
+- sampling rate info add to webpage
+- samplerate info add to webpage
+- stream format info add to webpage
+- "no audio stream" info add to webpage
+- OLED Display Mode button hidden under Web Display BOX - reaction OnClick
+
+
+3.17.86
+- Stationtext as no scrolling text on webpage, just 3 lines
+- Recation on volume slider with mouse wheel
+- No processor function to parse station name, station text, volume value. Now it worsk on WebSockets.
+- Config option for volume rage 1-21 or 1-42 now change is executed after saving config (no restart required)
+- Menu link in style of other buttons
+
+3.17.77
+- Add web sockets to web page
+- New layout of web page
+- Refresh Station String in real time on web page
+- Refresh Volume over ws in real time on web page
+- Bank Editor 1.05 
+- Config option for volume rage 1-21 or 1-42
+- mDNS add, radio hostname: http://esp32radio.local
+
+3.17
+- OTA Update directly from web page
+- SD card content browser over the web page (view, delete, edit)
+- IR codes stored on SD card in remote.txt file
+- Voice prompt of the time (PL and EN function avaliable)
+- Sub-revisioning system add (3.17.xx)
+- ADC Keyboard config web page added
+- OLED Power Save mode added
+
+3.16
+- This is first version that can work without SD CARD
+- In case of lack of SD card, station number, bank number, volume value are stored in EEPROM
+- Recover mode (update, reset bank value, reset station number value)
+
+3.15
+- Add 3-point equlizer with values soterd on sd card
+- Resistive-matrix keyboard based on single ADC input (ADC1, GPIO 9)
+- single rotary encoder operations
+- scrolling fucntion for station name if case of no emitted station string value
+- WiFi signal level on display
+- additional fullscreen clock mode
+- Correction of Polish signs inside font
+- Scrolling stations nad banks in loop
+- Add Vorbis VBR format
+
+
+
+
+
+
