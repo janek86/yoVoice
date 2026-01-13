@@ -12,14 +12,15 @@
 /* !!! Do not be alarmed, all right, the default values ​​are not included in this file !!! */
 
 #define DSP_MODEL			DSP_ILI9488
-#define BRIGHTNESS_PIN			35
+#define BRIGHTNESS_PIN		35
 #define I2S_DOUT			255
 #define VS1053_CS			27
 #define ENC_BTNR			36
 #define ENC_BTNL			34
 #define ENC_BTNB			39
 #define IR_PIN			32
+#define USE_BUILTIN_LED false
 
-https://e2002.github.io/docs/myoptions-generator.html?r=71,2,4,7,31,41,44,47,54,56,67&i=1,2,3,4,18,19,20,21,28,29,30,41&v=4,5,-1,35,27,25,26,-1,36,34,39,32
+// https://e2002.github.io/docs/myoptions-generator.html?r=71,2,4,7,31,41,44,47,54,56,67&i=1,2,3,4,18,19,20,21,28,29,30,41&v=4,5,-1,35,27,25,26,-1,36,34,39,32
 
 #endif
